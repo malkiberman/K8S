@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: voting-app-ingress
+  namespace: voting-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: voting.local
+    http:
+      paths:
+      - path: /vote
+        pathType: Prefix
+        backend:
+          service:
+            name: vote
+            port:
+              number: 80
+      - path: /result
+        pathType: Prefix
+        backend:
+          service:
+            name: result
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ui
+            port:
+              number: 80
