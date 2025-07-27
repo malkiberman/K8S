@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: redis-service
   namespace: voting-app
+  
 spec:
   selector:
     app: redis
