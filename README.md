@@ -24,3 +24,22 @@ To deploy the entire stack on your cluster:
    ```bash
    kubectl apply -f voting-app-config.yaml
    kubectl apply -f voting-app-secret.yaml
+
+2.   **Deploy services and databases:**
+
+   ```bash
+   kubectl apply -f postgres-deployment.yaml
+   kubectl apply -f redis-deployment.yaml
+
+3. **Deploy the application layers:**
+
+  ``` bash
+   kubectl apply -f vote-deployment.yaml
+   kubectl apply -f result-deployment.yaml
+   kubectl apply -f worker-deployment.yaml
+
+## 🧠 Skills Demonstrated##
+ - Cloud-native architecture design
+ - Container orchestration (K8s)
+ - Microservices communication
+ - YAML configuration & infrastructure as code
